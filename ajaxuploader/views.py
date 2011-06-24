@@ -1,5 +1,9 @@
 from django.http import HttpResponse, HttpResponseBadRequest, Http404
-import json
+
+try:
+	import json
+except:
+	from django.utils import simplejson as json
 
 from ajaxuploader.backends.s3 import S3UploadBackend
 
