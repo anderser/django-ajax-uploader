@@ -5,12 +5,12 @@ try:
 except:
 	from django.utils import simplejson as json
 
-from ajaxuploader.backends.s3 import S3UploadBackend
+from ajaxuploader.backends.local import LocalUploadBackend
 
 class AjaxFileUploader(object):
     def __init__(self, backend=None, **kwargs):
         if backend is None:
-            backend = S3UploadBackend
+            backend = LocalUploadBackend
         self._backend = backend(**kwargs)
 
     def __call__(self,request):
