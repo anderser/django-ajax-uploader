@@ -1,6 +1,11 @@
 from io import FileIO, BufferedWriter
 import os
-from StringIO import StringIO
+
+try:
+    from io import StringIO
+except:
+    from StringIO import StringIO
+
 
 from django.conf import settings
 
